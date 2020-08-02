@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="1000.0"
+          	prefWidth="1600.0"
+          	xmlns="http://javafx.com/javafx/9.0.1"
+          	xmlns:fx="http://javafx.com/fxml/1"
+          	fx:controller="StegoDesktop.Controller">
+	<children>
+		<SplitPane dividerPositions="0.08"
+         			orientation="VERTICAL"
+         			prefHeight="1000.0"
+         			prefWidth="1600.0">
+			<items>
+				<AnchorPane minHeight="0.0"
+          					minWidth="0.0">
+					<children>
+						<Button fx:id="coverBttn"
+      							layoutX="20.0"
+      							layoutY="10.0"
+      							maxHeight="30.0"
+      							maxWidth="140.0"
+      							minHeight="30.0"
+      							minWidth="140.0"
+      							mnemonicParsing="false"
+      							onAction="#getCoverAction"
+      							text="Get Cover Image">
+							<font>
+								<Font size="14.0"/>
+							</font>
+						</Button>
+						<TextField fx:id="coverImgField"
+         							layoutX="170.0"
+         							layoutY="10.0"
+         							maxHeight="30.0"
+         							maxWidth="300.0"
+         							minHeight="30.0"
+         							minWidth="300.0">
+							<font>
+								<Font size="14.0"/>
+							</font>
+						</TextField>
+						<Button fx:id="secretBttn"
+      							layoutX="520.0"
+      							layoutY="10.0"
+      							maxHeight="30.0"
+      							maxWidth="140.0"
+      							minHeight="30.0"
+      							minWidth="140.0"
+      							mnemonicParsing="false"
+      							onAction="#getSecretAction"
+      							text="Get Secret Image">
+							<font>
+								<Font size="14.0"/>
+							</font>
+						</Button>
+						<TextField fx:id="secretImgField"
+         							layoutX="670.0"
+         							layoutY="10.0"
+         							maxHeight="30.0"
+         							maxWidth="300.0"
+         							minHeight="30.0"
+         							minWidth="300.0">
+							<font>
+								<Font size="14.0"/>
+							</font>
+						</TextField>
+						<Button fx:id="keyBttn"
+      							layoutX="1020.0"
+      							layoutY="10.0"
+      							maxHeight="30.0"
+      							maxWidth="140.0"
+      							minHeight="30.0"
+      							minWidth="140.0"
+      							mnemonicParsing="false"
+      							onAction="#getKeyAction"
+      							text="Get Key Image">
+							<font>
+								<Font size="14.0"/>
+							</font>
+						</Button>
+						<TextField fx:id="keyImgField"
+         							layoutX="1170.0"
+         							layoutY="10.0"
+         							maxHeight="30.0"
+         							maxWidth="300.0"
+         							minHeight="30.0"
+         							minWidth="300.0">
+							<font>
+								<Font size="14.0"/>
+							</font>
+						</TextField>
+						<ToggleButton fx:id="enableKeyImgToggle"
+            							layoutX="1480.0"
+            							layoutY="13.0"
+            							maxHeight="25.0"
+            							maxWidth="60.0"
+            							minHeight="25.0"
+            							minWidth="60.0"
+            							mnemonicParsing="false"
+            							onAction="#updateUsingKeyAction"
+            							styleClass="keyToggleStyle"
+            							stylesheets="@guiStyling.css"
+            							text="ENABLE"/>
+						<Button id="getStegoBttn"
+      							layoutX="20.0"
+      							layoutY="50.0"
+      							maxHeight="30.0"
+      							maxWidth="140.0"
+      							minHeight="30.0"
+      							minWidth="140.0"
+      							mnemonicParsing="false"
+      							text="Get Stego-Object"
+      							onAction="#getStegoAction">
+							<font>
+								<Font size="14.0"/>
+							</font>
+						</Button>
+						<TextField fx:id="stegoImgField"
+         							layoutX="170.0"
+         							layoutY="50.0"
+         							maxHeight="30.0"
+         							maxWidth="300.0"
+         							minHeight="30.0"
+         							minWidth="300.0"/>
+					</children>
+				</AnchorPane>
+				<AnchorPane maxHeight="900.0"
+          					maxWidth="1598.0"
+          					minHeight="900.0"
+          					minWidth="1598.0"
+          					prefHeight="900.0"
+          					prefWidth="1598.0">
+					<children>
+						<SplitPane dividerPositions="0.20300751879699247"
+         							maxWidth="1598.0"
+         							minWidth="1598.0"
+         							AnchorPane.bottomAnchor="0.0"
+         							AnchorPane.topAnchor="0.0">
+							<items>
+								<AnchorPane minHeight="0.0"
+          									minWidth="0.0"
+          									prefHeight="160.0"
+          									prefWidth="100.0"
+          									styleClass="menuPanel"
+          									stylesheets="@guiStyling.css">
+									<children>
+										<SplitPane dividerPositions="0.4"
+         											orientation="VERTICAL"
+         											prefHeight="200.0"
+         											prefWidth="160.0"
+         											AnchorPane.bottomAnchor="0.0"
+         											AnchorPane.leftAnchor="0.0"
+         											AnchorPane.rightAnchor="0.0"
+         											AnchorPane.topAnchor="0.0">
+											<items>
+												<AnchorPane minHeight="0.0"
+          													minWidth="0.0"
+          													prefHeight="100.0"
+          													prefWidth="160.0">
+													<children>
+														<SplitPane dividerPositions="0.3"
+         															orientation="VERTICAL"
+         															prefHeight="200.0"
+         															prefWidth="160.0"
+         															styleClass="menuPanel"
+         															stylesheets="@guiStyling.css"
+         															AnchorPane.bottomAnchor="0.0"
+         															AnchorPane.leftAnchor="0.0"
+         															AnchorPane.rightAnchor="0.0"
+         															AnchorPane.topAnchor="0.0">
+															<items>
+																<AnchorPane minHeight="0.0"
+          																	minWidth="0.0"
+          																	prefHeight="100.0"
+          																	prefWidth="160.0">
+																	<children>
+																		<Pane prefHeight="200.0"
+    																			prefWidth="200.0"
+    																			AnchorPane.bottomAnchor="0.0"
+    																			AnchorPane.leftAnchor="0.0"
+    																			AnchorPane.rightAnchor="0.0"
+    																			AnchorPane.topAnchor="0.0">
+																			<children>
+																				<RadioButton fx:id="recoverSecretBttn"
+           																					layoutX="20.0"
+           																					layoutY="15.0"
+           																					mnemonicParsing="false"
+           																					onAction="#recoverSecretRadioAction"
+           																					text="Recover A Secret">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																					<toggleGroup>
+																						<ToggleGroup fx:id="stegoBttnGroup"/>
+																					</toggleGroup>
+																				</RadioButton>
+																				<Button fx:id="recoverPreviewBttn"
+      																					layoutX="20.0"
+      																					layoutY="55.0"
+      																					maxHeight="40.0"
+      																					maxWidth="116.0"
+      																					minHeight="40.0"
+      																					minWidth="116.0"
+      																					mnemonicParsing="false"
+      																					onAction="#previewRecoveredAction"
+      																					styleClass="previewButtonStyle"
+      																					stylesheets="@guiStyling.css"
+      																					text="Preview">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</Button>
+																				<Button fx:id="recoverSaveImgBttn"
+      																					layoutX="180.0"
+      																					layoutY="55.0"
+      																					maxHeight="40.0"
+      																					maxWidth="116.0"
+      																					minHeight="40.0"
+      																					minWidth="116.0"
+      																					mnemonicParsing="false"
+      																					onAction="#saveRecoveredAction"
+      																					styleClass="saveButtonStyle"
+      																					stylesheets="@guiStyling.css"
+      																					text="Save Image">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</Button>
+																			</children>
+																		</Pane>
+																	</children>
+																</AnchorPane>
+																<AnchorPane minHeight="0.0"
+          																	minWidth="0.0"
+          																	prefHeight="100.0"
+          																	prefWidth="160.0">
+																	<children>
+																		<Pane prefHeight="200.0"
+    																			prefWidth="200.0"
+    																			AnchorPane.bottomAnchor="0.0"
+    																			AnchorPane.leftAnchor="0.0"
+    																			AnchorPane.rightAnchor="0.0"
+    																			AnchorPane.topAnchor="0.0">
+																			<children>
+																				<RadioButton fx:id="makeStegoBttn"
+           																					layoutX="20.0"
+           																					layoutY="15.0"
+           																					mnemonicParsing="false"
+           																					onAction="#makeStegoRadioAction"
+           																					text="Create A Stego-Object"
+           																					toggleGroup="$stegoBttnGroup">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</RadioButton>
+																				<ToggleButton fx:id="coverBWToggle"
+            																					layoutX="20.0"
+            																					layoutY="60.0"
+            																					mnemonicParsing="false"
+            																					onAction="#updateCoverColorAction"
+            																					text="Grayscale Cover">
+																					<font>
+																						<Font size="14.0"/>
+																					</font>
+																				</ToggleButton>
+																				<ToggleButton fx:id="secretBWToggle"
+            																					layoutX="170.0"
+            																					layoutY="60.0"
+            																					mnemonicParsing="false"
+            																					onAction="#updateSecretColorAction"
+            																					text="Grayscale Secret">
+																					<font>
+																						<Font size="14.0"/>
+																					</font>
+																				</ToggleButton>
+																				<Label layoutX="45.0"
+     																					layoutY="110.0"
+     																					text="Bit planes to use for secret:">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</Label>
+																				<RadioButton fx:id="stegUse1PlaneBttn"
+           																					layoutX="20.0"
+           																					layoutY="150.0"
+           																					mnemonicParsing="false"
+           																					onAction="#stegoPlanesForSecretAction"
+           																					text="1">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																					<toggleGroup>
+																						<ToggleGroup fx:id="stegoBitPlaneGrp"/>
+																					</toggleGroup>
+																				</RadioButton>
+																				<RadioButton fx:id="stegUse2PlaneBttn"
+           																					layoutX="100.0"
+           																					layoutY="150.0"
+           																					mnemonicParsing="false"
+           																					onAction="#stegoPlanesForSecretAction"
+           																					text="2"
+           																					toggleGroup="$stegoBitPlaneGrp">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</RadioButton>
+																				<RadioButton fx:id="stegUse3PlaneBttn"
+           																					layoutX="180.0"
+           																					layoutY="150.0"
+           																					mnemonicParsing="false"
+           																					onAction="#stegoPlanesForSecretAction"
+           																					text="3"
+           																					toggleGroup="$stegoBitPlaneGrp">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</RadioButton>
+																				<RadioButton fx:id="stegUse4PlaneBttn"
+           																					layoutX="256.0"
+           																					layoutY="150.0"
+           																					mnemonicParsing="false"
+           																					onAction="#stegoPlanesForSecretAction"
+           																					text="4"
+           																					toggleGroup="$stegoBitPlaneGrp">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</RadioButton>
+																				<Button fx:id="stegoPreviewBttn"
+      																					layoutX="20.0"
+      																					layoutY="190.0"
+      																					maxHeight="40.0"
+      																					maxWidth="116.0"
+      																					minHeight="40.0"
+      																					minWidth="116.0"
+      																					mnemonicParsing="false"
+      																					onAction="#previewStegoAction"
+      																					styleClass="previewButtonStyle"
+      																					stylesheets="@guiStyling.css"
+      																					text="Preview">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</Button>
+																				<Button fx:id="stegoSaveBttn"
+      																					layoutX="180.0"
+      																					layoutY="190.0"
+      																					maxHeight="40.0"
+      																					maxWidth="116.0"
+      																					minHeight="40.0"
+      																					minWidth="116.0"
+      																					mnemonicParsing="false"
+      																					onAction="#saveStegoAction"
+      																					styleClass="saveButtonStyle"
+      																					stylesheets="@guiStyling.css"
+      																					text="Save Image">
+																					<font>
+																						<Font size="18.0"/>
+																					</font>
+																				</Button>
+																			</children>
+																		</Pane>
+																	</children>
+																</AnchorPane>
+															</items>
+														</SplitPane>
+													</children>
+												</AnchorPane>
+												<AnchorPane minHeight="0.0"
+          													minWidth="0.0"
+          													prefHeight="100.0"
+          													prefWidth="160.0">
+													<children>
+														<Pane prefHeight="200.0"
+    															prefWidth="200.0"
+    															styleClass="optionsPanel"
+    															stylesheets="@guiStyling.css"
+    															AnchorPane.bottomAnchor="0.0"
+    															AnchorPane.leftAnchor="0.0"
+    															AnchorPane.rightAnchor="0.0"
+    															AnchorPane.topAnchor="0.0">
+															<children>
+																<Label layoutX="57.0"
+     																	layoutY="10.0"
+     																	text="MORE PREVIEW OPTIONS">
+																	<font>
+																		<Font size="18.0"/>
+																	</font>
+																</Label>
+																<Label layoutX="28.0"
+     																	layoutY="37.0"
+     																	text="** Ensure an image is loaded before previewing **"/>
+																<RadioButton fx:id="advChooseCoverBttn"
+           																	layoutX="20.0"
+           																	layoutY="110.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advChooseImageAction"
+           																	text="Cover">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																	<toggleGroup>
+																		<ToggleGroup fx:id="advImgGrp"/>
+																	</toggleGroup>
+																</RadioButton>
+																<RadioButton fx:id="advChooseSecretBttn"
+           																	layoutX="125.0"
+           																	layoutY="110.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advChooseImageAction"
+           																	text="Secret"
+           																	toggleGroup="$advImgGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advChooseKeyBttn"
+           																	layoutX="238.0"
+           																	layoutY="110.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advChooseImageAction"
+           																	text="Key"
+           																	toggleGroup="$advImgGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<Label layoutX="120.0"
+     																	layoutY="75.0"
+     																	text="Apply To:">
+																	<font>
+																		<Font size="18.0"/>
+																	</font>
+																</Label>
+																<Label layoutX="67.0"
+     																	layoutY="195.0"
+     																	text="Color Channel To View:">
+																	<font>
+																		<Font size="18.0"/>
+																	</font>
+																</Label>
+																<RadioButton fx:id="advRedChanBttn"
+           																	layoutX="25.0"
+           																	layoutY="230.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advChooseChannelAction"
+           																	text="Red">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																	<toggleGroup>
+																		<ToggleGroup fx:id="advChnnlGrp"/>
+																	</toggleGroup>
+																</RadioButton>
+																<RadioButton fx:id="advGreenChanBttn"
+           																	layoutX="120.0"
+           																	layoutY="230.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advChooseChannelAction"
+           																	text="Green"
+           																	toggleGroup="$advChnnlGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advBlueChanBttn"
+           																	layoutX="230.0"
+           																	layoutY="230.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advChooseChannelAction"
+           																	text="Blue"
+           																	toggleGroup="$advChnnlGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<Label layoutX="89.0"
+     																	layoutY="315.0"
+     																	text="Bit Plane To View:">
+																	<font>
+																		<Font size="18.0"/>
+																	</font>
+																</Label>
+																<RadioButton fx:id="advWholeChannelBttn"
+           																	layoutX="75.0"
+           																	layoutY="349.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="View Whole Channel">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																	<toggleGroup>
+																		<ToggleGroup fx:id="advPlaneGrp"/>
+																	</toggleGroup>
+																</RadioButton>
+																<RadioButton fx:id="advViewBit1Bttn"
+           																	layoutX="20.0"
+           																	layoutY="379.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="1"
+           																	toggleGroup="$advPlaneGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advViewBit2Bttn"
+           																	layoutX="100.0"
+           																	layoutY="379.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="2"
+           																	toggleGroup="$advPlaneGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advViewBit3Bttn"
+           																	layoutX="180.0"
+           																	layoutY="379.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="3"
+           																	toggleGroup="$advPlaneGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advViewBit4Bttn"
+           																	layoutX="258.0"
+           																	layoutY="379.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="4"
+           																	toggleGroup="$advPlaneGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advViewBit5Bttn"
+           																	layoutX="20.0"
+           																	layoutY="414.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="5"
+           																	toggleGroup="$advPlaneGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advViewBit6Bttn"
+           																	layoutX="100.0"
+           																	layoutY="414.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="6"
+           																	toggleGroup="$advPlaneGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advViewBit7Bttn"
+           																	layoutX="180.0"
+           																	layoutY="414.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="7"
+           																	toggleGroup="$advPlaneGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advViewBit8Bttn"
+           																	layoutX="258.0"
+           																	layoutY="414.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advBitPlaneToViewAction"
+           																	text="8"
+           																	toggleGroup="$advPlaneGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<Button fx:id="showAdvancedBttn"
+      																	layoutX="60.0"
+      																	layoutY="470.0"
+      																	mnemonicParsing="false"
+      																	onAction="#advShowSelectionAction"
+      																	styleClass="keyToggleStyle"
+      																	stylesheets="@guiStyling.css"
+      																	text="SHOW SELECTED VIEW">
+																	<font>
+																		<Font size="18.0"/>
+																	</font>
+																</Button>
+																<RadioButton fx:id="advChooseCurrentBttn"
+           																	layoutX="65.0"
+           																	layoutY="140.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advChooseImageAction"
+           																	text="Current Processed Image"
+           																	toggleGroup="$advImgGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+																<RadioButton fx:id="advWholeImgBttn"
+           																	layoutX="87.0"
+           																	layoutY="260.0"
+           																	mnemonicParsing="false"
+           																	onAction="#advChooseChannelAction"
+           																	text="View Entire Image"
+           																	toggleGroup="$advChnnlGrp">
+																	<font>
+																		<Font size="14.0"/>
+																	</font>
+																</RadioButton>
+															</children>
+														</Pane>
+													</children>
+												</AnchorPane>
+											</items>
+										</SplitPane>
+									</children>
+								</AnchorPane>
+								<AnchorPane minHeight="0.0"
+          									minWidth="0.0">
+									<children>
+										<ScrollPane styleClass="viewPanel"
+          											stylesheets="@guiStyling.css"
+          											AnchorPane.bottomAnchor="0.0"
+          											AnchorPane.leftAnchor="0.0"
+          											AnchorPane.rightAnchor="0.0"
+          											AnchorPane.topAnchor="0.0">
+											<content>
+												<Group id="imageGroup">
+													<AnchorPane maxHeight="898.0"
+          														maxWidth="1269.0"
+          														minHeight="898.0"
+          														minWidth="1269.0">
+														<children>
+															<ImageView fx:id="imageViewer"
+         																pickOnBounds="true"
+         																preserveRatio="true"
+         																AnchorPane.bottomAnchor="0.0"
+         																AnchorPane.leftAnchor="0.0"
+         																AnchorPane.rightAnchor="0.0"
+         																AnchorPane.topAnchor="0.0"/>
+														</children>
+													</AnchorPane>
+												</Group>
+											</content>
+										</ScrollPane>
+									</children>
+								</AnchorPane>
+							</items>
+						</SplitPane>
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>
